@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html data-ng-app="transportApp">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+<!-- <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+
+
+<script>
+	document.write('<base href="' + document.location + '" />');
+</script>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"
+	charset="utf-8"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
+<script
+	src="https://rawgit.com/krispo/angular-nvd3/v1.0.4/dist/angular-nvd3.js"></script>
+
+
+<script src="app.js"></script>
+
+<script src="table.js"></script>
+
+<script src="chart.js"></script>
+
+<!-- <script src="chartSelection.js"></script> -->
+
+
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="style.css" />
+
+</head>
+<body ng-controller="SwitchController">
+	<div class="login-css">
+		<!-- <h2>hi</h2> -->
+		<div id="list">
+			<ul>
+
+				<li ng-click="changeViewToGraph()" class="scroll"><b>Graph</b></li>
+				<li ng-click="changeViewToTable()" class="scroll"><b>Table</b></li>
+
+
+			</ul>
+		</div>
+		<br>
+		<div ng-view class="centerpiece"></div>
+
+	</div>
+
+</body>
+</html>

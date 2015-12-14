@@ -1,0 +1,58 @@
+
+<div>
+	<div class="center">
+		<br>
+			Sort By (Default Ascending): <select ng-hide="check"
+				ng-model="requestSortOrder">
+				<option value="+reqId">Request ID</option>
+				<option value="+current_location_id">Vehicle Request Location ID</option>
+				<option value="+shipping_location_id">Vehicle Request Destination
+					ID</option>
+				<option value="+vehicle_id">Vehicle ID</option>
+				<option value="+status">Status</option>
+			</select> <select ng-show="check" ng-model="requestSortOrder">
+				<option value="-reqId">Request ID</option>
+				<option value="-current_location_id">Vehicle Request Location ID</option>
+				<option value="-shipping_location_id">Vehicle Request Destination
+					ID</option>
+				<option value="-vehicle_id">Vehicle ID</option>
+				<option value="-status">Status</option>
+			</select>
+			<!-- Checkbox will change ascending order to descending order when selected. Could try ng-hide/show with decending for select -->
+			Descending Order:<input type="checkbox" ng-model="check"><br></br>
+
+
+			<div id="total_requests">
+				<h4>Total Number of Vehicle Requests: {{names.length}}</h4>
+			</div>
+			<br>
+		</div>
+		<div id="container">
+
+			<table border="1" class="table table-striped">
+				<thead class="center-text">
+					<tr>
+						<th>Id</th>
+						<th>Request ID</th>
+						<th>Shipping Sender Location ID</th>
+						<th>Shipping Requester Location ID</th>
+						<th>Vehicle ID</th>
+						<!-- <th>Price</th> -->
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="x in names | orderBy: requestSortOrder">
+						<td>{{$index +1}}</td>
+						<td>{{x.reqId}}</td>
+						<!-- could call a function that counts a global variable. -->
+						<td>{{x.current_location_id}}</td>
+						<td>{{x.shipping_location_id}}</td>
+						<td>{{x.vehicle_id}}</td>
+						<td>{{x.status}}</td>
+					
+					</tr>
+				</tbody>
+			</table>
+		</div>
+</div>
